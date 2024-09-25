@@ -1,0 +1,13 @@
+# Fetch and parse the JSON from the KV store
+RAW Json: [map[job_name:vault metrics_path:/probe module:vault_health target:test1] map[job_name:consul_kv metrics_path:/probe module:consul_health target:test2]]
+
+- job_name: vault
+  metrics_path: /probe
+  module: vault_health
+  target: test1
+
+- job_name: consul_kv
+  metrics_path: /probe
+  module: consul_health
+  target: test2
+

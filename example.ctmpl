@@ -1,0 +1,8 @@
+{{ $jobs := parseJSON (key "accept_fmt") }}# Fetch and parse the JSON from the KV store
+RAW Json: {{ $jobs }}
+{{ range $job := $jobs }}
+- job_name: {{ $job.job_name }}
+  metrics_path: {{ $job.metrics_path }}
+  module: {{ $job.module }}
+  target: {{ $job.target }}
+{{ end }}
